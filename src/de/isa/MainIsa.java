@@ -10,7 +10,7 @@ import de.isa.views.StockPrinter;
 import java.util.LinkedList;
 
 
-public class Main {
+public class MainIsa {
 
     public static void main(String[] args) {
         Stock testStock = fillStock();
@@ -23,7 +23,7 @@ public class Main {
 //        StockPrinter.printGuitar(singleTestGuitar);
 
         // Test search method om stock
-        GuitarData guitarTheCustomerLikes = new GuitarData(Manufacturer.PRS, "Model", Type.ELECTRIC, Wood.ALDER, Wood.ALDER, 12);
+        GuitarData guitarTheCustomerLikes = new GuitarData(Manufacturer.PRS, "Model", Type.ELECTRIC, Wood.ALDER, Wood.ALDER, 6);
         LinkedList<Guitar> results = testStock.search(guitarTheCustomerLikes);
         StockPrinter.printGuitarList(results);
     }
