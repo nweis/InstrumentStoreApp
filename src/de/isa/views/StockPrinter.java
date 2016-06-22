@@ -29,10 +29,11 @@ public class StockPrinter {
         System.out.println("Serialnumber: " + guitar.getSerialNumber());
         System.out.println("Price: " + guitar.getPrice());
         System.out.println("Manufacturer: " + guitar.getGuitarData().getManufacturer().toString());
-        System.out.println("Model: " + guitar.getGuitarData().getModell());
+        System.out.println("Model: " + guitar.getGuitarData().getModel());
         System.out.println("Type: " + guitar.getGuitarData().getType());
         System.out.println("Ground wood: " + guitar.getGuitarData().getGroundWood());
         System.out.println("Cover wood: " + guitar.getGuitarData().getCoverWood());
+        System.out.println("Amount of strings: " + guitar.getGuitarData().getAmountOfStrings());
         System.out.println("---");
     }
 

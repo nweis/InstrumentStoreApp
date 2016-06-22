@@ -16,14 +16,14 @@ public class Main {
         Stock testStock = fillStock();
 
         // Print entire stock
-        StockPrinter.printStock(testStock);
+//        StockPrinter.printStock(testStock);
 
         // Test getGuitar method
-        Guitar singleTestGuitar = testStock.getGuitar("Serial 1");
-        StockPrinter.printGuitar(singleTestGuitar);
+        //Guitar singleTestGuitar = testStock.getGuitar("Serial 1");
+//        StockPrinter.printGuitar(singleTestGuitar);
 
         // Test search method om stock
-        GuitarData guitarTheCustomerLikes = new GuitarData(Manufacturer.PRS, "Model", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
+        GuitarData guitarTheCustomerLikes = new GuitarData(Manufacturer.PRS, "Model", Type.ELECTRIC, Wood.ALDER, Wood.ALDER, 12);
         LinkedList<Guitar> results = testStock.search(guitarTheCustomerLikes);
         StockPrinter.printGuitarList(results);
     }
@@ -37,28 +37,28 @@ public class Main {
         Double price1 = 1.1;
         String model1 = "Model";
 
-        stock.addGuitar(serialNumber1, price1, Manufacturer.PRS, model1, Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
+        stock.addGuitar(serialNumber1, price1, Manufacturer.PRS, model1, Type.ELECTRIC, Wood.ALDER, Wood.ALDER, 6);
 
         // Test guitar2
         String serialNumber2 = "Serial 2";
         Double price2 = 2.2;
         String model2 = "Model";
 
-        stock.addGuitar(serialNumber2, price2, Manufacturer.PRS, model2, Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
+        stock.addGuitar(serialNumber2, price2, Manufacturer.PRS, model2, Type.ELECTRIC, Wood.ALDER, Wood.ALDER, 6);
 
         // Test guitar3
         String serialNumber3 = "Serial 3";
         Double price3 = 3.3;
         String model3 = "Model 3";
 
-        stock.addGuitar(serialNumber3, price3, Manufacturer.GIBSON, model3, Type.ELECTRIC, Wood.INDIAN_JACARANDA, Wood.INDIAN_JACARANDA);
+        stock.addGuitar(serialNumber3, price3, Manufacturer.GIBSON, model3, Type.ELECTRIC, Wood.INDIAN_JACARANDA, Wood.INDIAN_JACARANDA, 12);
 
         // Test guitar4
         String serialNumber4 = "Serial 4";
         Double price4 = 4.4;
         String model4 = "Model 4";
 
-        stock.addGuitar(serialNumber4, price4, Manufacturer.MARTIN, model4, Type.ACOUSTIC, Wood.MAHOGANY, Wood.MAHOGANY);
+        stock.addGuitar(serialNumber4, price4, Manufacturer.MARTIN, model4, Type.ACOUSTIC, Wood.MAHOGANY, Wood.MAHOGANY, 12);
 
         return stock;
     }

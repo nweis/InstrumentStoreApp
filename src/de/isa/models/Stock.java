@@ -21,9 +21,12 @@ public class Stock {
 			String model,
 			Type type,
 			Wood groundWood,
-			Wood coverWood) {
+			Wood coverWood,
+			Integer amountOfStrings) {
 
-		Guitar guitarToAdd = new Guitar(serialNumber, price, manufacturer, model, type, groundWood, coverWood);
+		GuitarData guitarDataToAdd = new GuitarData(manufacturer, model, type, groundWood, coverWood, amountOfStrings);
+
+		Guitar guitarToAdd = new Guitar(serialNumber, price, guitarDataToAdd);
 		this.guitars.add(guitarToAdd);
 	}
 
@@ -47,11 +50,12 @@ public class Stock {
 
 		for(Iterator i = guitars.iterator(); i.hasNext();) {
 			Guitar currentGuitarToCheck = (Guitar)i.next();
-			if(currentGuitarToCheck.getGuitarData().getCoverWood() == searchData.getCoverWood())
-				continue;
-			if(currentGuitarToCheck.getGuitarData().getGroundWood() == searchData.getGroundWood())
-				continue;
-			foundGuitars.add(currentGuitarToCheck);
+			GuitarData currentGuitarDataToCheck = currentGuitarToCheck.getGuitarData();
+
+			if(currentGuitarDataToCheck.equalsGuitarData(searchData)) {
+				foundGuitars.add(currentGuitarToCheck);
+			}
+
 		}
 
 		return foundGuitars;

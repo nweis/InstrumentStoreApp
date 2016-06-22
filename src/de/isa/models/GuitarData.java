@@ -10,32 +10,54 @@ public class GuitarData {
     private Type type;
     private Wood groundWood;
     private Wood coverWood;
+    private Integer amountOfStrings;
 
-    public GuitarData(Manufacturer manufacturer, String modell, Type type, Wood groundWood, Wood coverWood) {
+    public GuitarData(Manufacturer manufacturer, String modell, Type type, Wood groundWood, Wood coverWood, Integer amountOfStrings) {
         this.manufacturer = manufacturer;
         this.modell = modell;
         this.type = type;
         this.groundWood = groundWood;
         this.coverWood = coverWood;
+        this.amountOfStrings = amountOfStrings;
     }
 
     public Manufacturer getManufacturer() {
-        return this.manufacturer;
+        return manufacturer;
     }
 
-    public String getModell() {
-        return this.modell;
+    public String getModel() {
+        return modell;
     }
 
     public Type getType() {
-        return this.type;
+        return type;
     }
 
     public Wood getGroundWood() {
-        return this.groundWood;
+        return groundWood;
     }
 
     public Wood getCoverWood() {
-        return this.coverWood;
+        return coverWood;
+    }
+
+    public Integer getAmountOfStrings() {
+        return amountOfStrings;
+    }
+
+    public Boolean equalsGuitarData(GuitarData guitarData) {
+        String model = guitarData.getModel().toLowerCase();
+
+        if (this.getCoverWood() == guitarData.getCoverWood()
+                && this.getGroundWood() == guitarData.getGroundWood()
+                && this.getType() == guitarData.getType()
+                && this.getManufacturer() == guitarData.getManufacturer()
+                && this.getAmountOfStrings() == guitarData.getAmountOfStrings()
+                && ((!model.equals("")) && (model.equals(this.getModel().toLowerCase())))
+                ) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

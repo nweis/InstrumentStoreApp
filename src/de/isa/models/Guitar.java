@@ -1,10 +1,5 @@
 package de.isa.models;
 
-import de.isa.enums.Manufacturer;
-import de.isa.enums.Type;
-import de.isa.enums.Wood;
-
-
 public class Guitar {
 	private String serialNumber;
 	private Double price;
@@ -13,15 +8,11 @@ public class Guitar {
 	public Guitar(
 			String serialNumber,
 			Double price,
-			Manufacturer manufacturer,
-			String model,
-			Type type,
-			Wood groundWood,
-			Wood coverWood) {
+			GuitarData guitarData) {
 			
 		this.serialNumber = serialNumber;
 		this.price = price;
-		this.guitarData = new GuitarData(manufacturer, model, type, groundWood, coverWood);
+		this.guitarData = guitarData;
 	}
 	
 	public String getSerialNumber() {
