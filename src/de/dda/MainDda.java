@@ -17,6 +17,16 @@ public class MainDda {
 
         System.out.println("\nFido is done.");
 
+
+        try{
+            Thread.currentThread().sleep(2000);
+        }catch (InterruptedException e) {
+            // We'll just do nothing to catch this exception
+        }
+
+        System.out.println("\n...but Fido is locked out.");
+        System.out.println("\n...Tina is pushing the button again.");
+        remoteControl.pressButton();
         System.out.println("\nFido is in.");
 
     }
