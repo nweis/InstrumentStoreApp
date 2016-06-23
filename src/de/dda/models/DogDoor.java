@@ -3,8 +3,10 @@ package de.dda.models;
 public class DogDoor {
 
     private boolean open;
+    private int automaticClosureTimeOutInSeconds;
 
     public DogDoor() {
+        this.automaticClosureTimeOutInSeconds = 1000;
         this.open = false;
     }
 
@@ -20,5 +22,9 @@ public class DogDoor {
 
     public boolean isOpen() {
         return open;
+    }
+
+    public int getAutomaticClosureTimeOutInSeconds() {
+        return automaticClosureTimeOutInSeconds;
     }
 }

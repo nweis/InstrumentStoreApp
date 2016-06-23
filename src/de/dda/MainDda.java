@@ -14,13 +14,10 @@ public class MainDda {
         remoteControl.pressButton();
 
         System.out.println("\nFido is out.");
-        remoteControl.pressButton();
 
         System.out.println("\nFido is done.");
-        remoteControl.pressButton();
 
         System.out.println("\nFido is in.");
-        remoteControl.pressButton();
 
     }
 
